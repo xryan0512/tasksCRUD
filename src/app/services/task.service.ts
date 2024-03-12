@@ -11,25 +11,25 @@ export class TaskService {
 
   constructor(private http: HttpClient) {}
 
-  getTaskItems(pageNumber = 1, pageSize = 5): Observable<any> {
-    return this.http.get(
+  getTaskItems(pageNumber = 1, pageSize = 5): Observable<Task[]> {
+    return this.http.get<Task[]>(
       `${this.apiUrl}?pageNumber=${pageNumber}&pageSize=${pageSize}`
     );
   }
 
-  getTaskItem(id: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/${id}`);
+  getTaskItem(id: number): Observable<Task> {
+    return this.http.get<Task>(`${this.apiUrl}/${id}`);
   }
 
-  createTaskItem(taskItem: any): Observable<any> {
-    return this.http.post(this.apiUrl, taskItem);
+  createTaskItem(taskItem: Task): Observable<Task> {
+    return this.http.post<Task>(this.apiUrl, taskItem);
   }
 
-  updateTaskItem(id: number, taskItem: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, taskItem);
+  updateTaskItem(id: number, taskItem: Task): Observable<Task> {
+    return this.http.put<Task>(`${this.apiUrl}/${id}`, taskItem);
   }
 
-  deleteTaskItem(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+  deleteTaskItem(id: number): Observable<Task> {
+    return this.http.delete<Task>(`${this.apiUrl}/${id}`);
   }
 }
