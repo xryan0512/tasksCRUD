@@ -8,7 +8,7 @@ import { Task } from 'src/interfaces/task.interface';
   styleUrls: ['./create-task.component.css'],
 })
 export class CreateTaskComponent {
-  task: Task = { title: '', isCompleted: false };
+  task: Task = { title: '', isCompleted: false, description: '' };
   successMsg: boolean | null = null;
   constructor(private taskService: TaskService) {}
 
@@ -19,6 +19,6 @@ export class CreateTaskComponent {
         this.successMsg = false;
       }, 3000);
     });
-    this.task = { title: '', isCompleted: false };
+    this.task = { title: '', isCompleted: false, description: '' };
   }
 }

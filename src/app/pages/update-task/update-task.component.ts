@@ -9,7 +9,7 @@ import { Task } from 'src/interfaces/task.interface';
   styleUrls: ['./update-task.component.css'],
 })
 export class UpdateTaskComponent {
-  task: Task = { title: '', isCompleted: false };
+  task: Task = { title: '', isCompleted: false, description: '' };
 
   constructor(private route: ActivatedRoute, public service: TaskService) {}
 
