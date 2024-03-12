@@ -1,29 +1,46 @@
-<div
-  class="max-w-sm p-6 bg-white text-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
->
-  <h1>Editar Tarea:</h1>
-
-  <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
-    <input class="text-black" type="text" [(ngModel)]="task.title" />
-  </h5>
-  <h5 class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
-    <input class="text-black" type="text" [(ngModel)]="task.description" />
-  </h5>
-
-  <input
-    type="checkbox"
-    name=""
-    [(ngModel)]="task.isCompleted"
-    [checked]="task.isCompleted"
-  />
-  Completed
-
-  <button
-    class="m-6 py-2 px-5 bg-violet-500 text-white font-semibold rounded-full"
-    (click)="saveTask(task)"
+<div class="flex justify-center">
+  <div
+    class="max-w-sm p-6 bg-white text-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
   >
-    Actualizar tarea
-  </button>
-</div>
+    <h1 class="text-2xl text-white dark:text-white">Editar Tarea:</h1>
 
-<app-back-btn></app-back-btn>
+    <h5
+      class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white"
+    >
+      <input
+        class="text-black"
+        type="text"
+        [(ngModel)]="task.title"
+        placeholder="Titulo"
+      />
+    </h5>
+    <h5
+      class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white"
+    >
+      <input
+        class="text-black"
+        type="text"
+        [(ngModel)]="task.description"
+        placeholder="Descripcion"
+      />
+    </h5>
+
+    <input
+      type="checkbox"
+      name=""
+      [(ngModel)]="task.isCompleted"
+      [checked]="task.isCompleted"
+    />
+    Completed
+
+    <div class="flex justify-between">
+      <app-back-btn></app-back-btn>
+      <button
+        class="m-6 py-2 px-5 bg-violet-500 text-white font-semibold rounded-full"
+        (click)="saveTask(task)"
+      >
+        Actualizar tarea
+      </button>
+    </div>
+  </div>
+</div>
