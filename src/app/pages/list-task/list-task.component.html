@@ -19,16 +19,13 @@
           {{ task.title }}
         </h5>
       </a>
-      <!-- <p class="mb-3 font-normal text-gray-600 dark:text-gray-400">
-        {{ task.description }}
-      </p> -->
       <div class="mt-6">
         <button
           *ngIf="task.id"
           (click)="gotoUpdate(task.id)"
           class="flex items-center float-right py-2 px-2 bg-violet-500 text-white font-semibold rounded-md"
         >
-          Update
+          Editar
           <svg
             class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
             aria-hidden="true"
