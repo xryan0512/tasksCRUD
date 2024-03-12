@@ -10,7 +10,8 @@ import { Task } from 'src/interfaces/task.interface';
 })
 export class UpdateTaskComponent {
   task: Task = { title: '', isCompleted: false, description: '' };
-
+  isSuccessMsg = false;
+  textSucessMsg = 'Datos actualizados!!!';
   constructor(private route: ActivatedRoute, public service: TaskService) {}
 
   ngOnInit(): void {
@@ -25,7 +26,12 @@ export class UpdateTaskComponent {
 
   saveTask(task: Task) {
     if (task.id !== undefined) {
-      this.service.updateTaskItem(task.id, task).subscribe((res) => res);
+      this.service.updateTaskItem(task.id, task).subscribe((res) => {
+        this.isSuccessMsg = true;
+        setTimeout(() => {
+          this.isSuccessMsg = false;
+        }, 3000);
+      });
     }
   }
 }

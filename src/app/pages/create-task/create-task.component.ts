@@ -9,7 +9,8 @@ import { Task } from 'src/interfaces/task.interface';
 })
 export class CreateTaskComponent {
   task: Task = { title: '', isCompleted: false, description: '' };
-  successMsg: boolean | null = null;
+  successMsg: boolean = false;
+  textMsg: string = 'Documento creado correctamente!!!';
   constructor(private taskService: TaskService) {}
 
   addTask(): void {
