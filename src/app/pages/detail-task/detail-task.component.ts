@@ -9,7 +9,7 @@ import { Task } from 'src/interfaces/task.interface';
   styleUrls: ['./detail-task.component.css'],
 })
 export class DetailTaskComponent implements OnInit {
-  task!: Task;
+  task: Task = { title: '', isCompleted: false, description: '' };
 
   constructor(private route: ActivatedRoute, public service: TaskService) {}
 

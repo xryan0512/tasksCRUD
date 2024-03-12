@@ -1,17 +1,20 @@
-<div
-  class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
->
-  <h1>Details</h1>
-
-  <h5
-    class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+<div class="flex justify-center">
+  <div
+    class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
   >
-    {{ task.title }}
-  </h5>
+    <h1
+      class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+    >
+      Detalle de la tarea
+    </h1>
 
-  <p class="mb-3 font-normal text-gray-600 dark:text-gray-400">
-    {{ task.description }}
-  </p>
+    <h5 class="mb-2 text-md font-normal dark:text-white">
+      Titulo: {{ task.title }}
+    </h5>
+
+    <p class="mb-3 text-md font-normal text-white">
+      Descripcion: {{ task.description }}
+    </p>
+    <app-back-btn></app-back-btn>
+  </div>
 </div>
-
-<app-back-btn></app-back-btn>
