@@ -1,1 +1,90 @@
-<button color="primary">Agregar Tarea</button>
+<section>
+  <app-add-task></app-add-task>
+  <section class="grid grid-cols-4 gap-4">
+    <div
+      class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+      *ngFor="let task of tasks"
+    >
+      <div
+        *ngIf="task.id"
+        class="items-center float-right px-2 bg-red-500 text-white font-semibold cursor-pointer rounded-lg"
+        (click)="deleteTask(task.id)"
+      >
+        X
+      </div>
+      <a href="#">
+        <h5
+          class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+        >
+          {{ task.title }}
+        </h5>
+      </a>
+      <!-- <p class="mb-3 font-normal text-gray-600 dark:text-gray-400">
+        {{ task.description }}
+      </p> -->
+      <div class="mt-6">
+        <button
+          *ngIf="task.id"
+          (click)="gotoUpdate(task.id)"
+          class="flex items-center float-right py-2 px-2 bg-violet-500 text-white font-semibold rounded-md"
+        >
+          Update
+          <svg
+            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
+        </button>
+        <button
+          *ngIf="task.id"
+          (click)="gotoDetails(task.id)"
+          class="flex items-center justify-between py-2 px-2 bg-violet-500 text-white font-semibold rounded-md"
+        >
+          Leer mas
+          <svg
+            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="flex justify-evenly mt-8">
+    <button
+      class="py-2 px-2 bg-violet-500 text-white font-semibold rounded-md"
+      *ngIf="!disablePreviousBtn"
+      (click)="previusPage()"
+    >
+      Atras
+    </button>
+    <button
+      class="py-2 px-2 bg-violet-500 text-white font-semibold rounded-md"
+      *ngIf="!disableNextBtn"
+      (click)="nextPage()"
+    >
+      Siguiente
+    </button>
+  </div>
+</section>
